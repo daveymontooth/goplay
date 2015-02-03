@@ -2,11 +2,12 @@ package main
 
 import (
 	"net/http"
+  	"os"
 )
 
 func main() {
 
 	router := NewRouter()
 
-	http.ListenAndServe(":8080", router)
+  	http.ListenAndServe(":" + os.Getenv("PORT"), router)
 }
